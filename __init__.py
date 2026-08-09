@@ -8,7 +8,7 @@ class PyBtnBox_Preferences(bpy.types.AddonPreferences):
     
     root_path : bpy.props.StringProperty(
         name="Example File Path",
-        default= '',
+        #default= '',
         subtype='DIR_PATH',
     )
 
