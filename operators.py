@@ -48,8 +48,9 @@ class PYBTNBOX_OT_Btn_Description(bpy.types.Operator):
 
     def draw(self, context):
         layout = self.layout
-        col = layout.column()
-        for t in self.text.split('\\n'):
+        col = layout.column(align=True)
+        col.scale_y=0.75
+        for t in self.text.split('\n'):
             row = col.row()
             row.label(text=t)
 
