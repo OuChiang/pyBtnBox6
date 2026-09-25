@@ -16,6 +16,10 @@ class PYBTNBOX_OT_Btn_Execute(bpy.types.Operator):
     bl_idname = "pybtnbox.button_execute"
     bl_label = "Button"
     file_path : bpy.props.StringProperty(default="")
+    @classmethod
+    def description(cls,context, properties):
+        import os
+        return f'Run {os.path.basename(properties.file_path)}\nExecute Python Script'
     
     def execute(self, context):
         btnPath = self.file_path
@@ -38,7 +42,7 @@ class PYBTNBOX_OT_Btn_Description(bpy.types.Operator):
     bl_description = 'Button Info'
     btnName: bpy.props.StringProperty(default="")
     text: bpy.props.StringProperty(default="")
-
+    
     def execute(self, context):
         return {'FINISHED'}
     
